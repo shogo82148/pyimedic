@@ -88,7 +88,7 @@ class Handler(xml.sax.handler.ContentHandler):
                     raise ValueError
             self._dic.append(makeDictionaryEntry(**self._dicentry))
         elif name[0]==_ns_dctx and name[1] in Handler._entry_tags:
-            self._dicentry[name[1]] = self._text
+            self._dicentry[str(name[1])] = self._text
         elif name[0]==_ns_dctx and name[1] in Handler._info_tags:
             setattr(self._info, name[1], self._text)
         elif name==(_ns_dctx, 'DictionaryGUID'):
