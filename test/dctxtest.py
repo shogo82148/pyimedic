@@ -1,67 +1,17 @@
 # -*- coding:utf-8 -*-
 
+import os
 import unittest
 import pyimedic
 import pyimedic.dctx
 from StringIO import StringIO
 
 class DctxTest(unittest.TestCase):
-    def testParseDctx(self):
-        f = StringIO("""<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ns1:Dictionary xmlns:ns1="http://www.microsoft.com/ime/dctx"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <ns1:DictionaryHeader>
-    <ns1:DictionaryGUID>{6136b8e0-e6db-4285-86e1-98aa4653ba2b}</ns1:DictionaryGUID>
-    <ns1:DictionaryLanguage>ja-jp</ns1:DictionaryLanguage>
-    <ns1:DictionaryVersion>1</ns1:DictionaryVersion>
-    <ns1:SourceURL>http://office.microsoft.com/ja-jp/ime/</ns1:SourceURL>
-    <ns1:CommentInsertion>true</ns1:CommentInsertion>
-    <ns1:DictionaryInfo Language="ja-jp">
-      <ns1:ShortName>植物辞書</ns1:ShortName>
-      <ns1:LongName>日本の植物名辞書</ns1:LongName>
-      <ns1:Description>日本に分布する植物を収録した辞書です</ns1:Description>
-      <ns1:Copyright>© 2010 Japanese Plant K.K.</ns1:Copyright>
-      <ns1:CommentHeader1>分類</ns1:CommentHeader1>
-      <ns1:CommentHeader2>分布地域</ns1:CommentHeader2>
-      <ns1:CommentHeader3>学名</ns1:CommentHeader3>
-    </ns1:DictionaryInfo>
-    <ns1:DictionaryInfo Language="en-us">
-      <ns1:ShortName>Plant Dictionary</ns1:ShortName>
-      <ns1:LongName>Japanese Plant Dictionary</ns1:LongName>
-      <ns1:Description>This dictionary contains plant names, which live in Japan.</ns1:Description>
-      <ns1:Copyright>© 2010 Japanese Plant K.K.</ns1:Copyright>
-      <ns1:CommentHeader1>Category</ns1:CommentHeader1>
-      <ns1:CommentHeader2>Distribution</ns1:CommentHeader2>
-      <ns1:CommentHeader3>Nomenclature</ns1:CommentHeader3>
-    </ns1:DictionaryInfo>
-  </ns1:DictionaryHeader>
-  <ns1:DictionaryEntry>
-    <ns1:InputString>ばっこやなぎ</ns1:InputString>
-    <ns1:OutputString>婆っこ柳</ns1:OutputString>
-    <ns1:PartOfSpeech>Noun</ns1:PartOfSpeech>
-    <ns1:CommentData1>ヤナギ科ヤナギ属落葉高木</ns1:CommentData1>
-    <ns1:CommentData2>近畿地方以北</ns1:CommentData2>
-    <ns1:CommentData3>Salix Bakko</ns1:CommentData3>
-    <ns1:URL>http://www.bing.com/search?q=%E5%A9%86%E3%81%A3%E3%81%93%E6%9F%B3&amp;src=IE-SearchBox&amp;FORM=IE8SRC</ns1:URL>
-    <ns1:Priority>100</ns1:Priority>
-    <ns1:ReverseConversion>true</ns1:ReverseConversion>
-    <ns1:CommonWord>false</ns1:CommonWord>
-  </ns1:DictionaryEntry>
-  <ns1:DictionaryEntry>
-    <ns1:InputString>ひめもち</ns1:InputString>
-    <ns1:OutputString>姫黐</ns1:OutputString>
-    <ns1:PartOfSpeech>Noun</ns1:PartOfSpeech>
-    <ns1:CommentData1>モチノキ科モチノキ属常緑低木</ns1:CommentData1>
-    <ns1:CommentData2>本州日本海側</ns1:CommentData2>
-    <ns1:CommentData3>Ilex leucoclada</ns1:CommentData3>
-    <ns1:URL>http://www.bing.com/search?q=%E5%A7%AB%E9%BB%90&amp;src=IE-SearchBox&amp;FORM=IE8SRC</ns1:URL>
-    <ns1:Priority>100</ns1:Priority>
-    <ns1:ReverseConversion>true</ns1:ReverseConversion>
-    <ns1:CommonWord>false</ns1:CommonWord>
-  </ns1:DictionaryEntry>
-</ns1:Dictionary>
-""")
-        d = pyimedic.dctx.parse(f)
+    def testReadDctx(self):
+        dctx_file = os.path.join(os.path.dirname(__file__), 'sample.dctx')
+        with open(dctx_file) as f:
+            d = pyimedic.dctx.read(f)
+
         self.assertEquals(d.GUID, "{6136b8e0-e6db-4285-86e1-98aa4653ba2b}")
         self.assertEquals(d.Language, "ja-jp")
         self.assertEquals(d.Version, 1)
@@ -109,3 +59,15 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
                 Priority = 100,
                 ReverseConversion = True,
                 CommonWord = False))
+
+    def testWriteDctx(self):
+        dctx_file = os.path.join(os.path.dirname(__file__), 'sample.dctx')
+        with open(dctx_file) as f:
+            sample = f.read()
+
+        d = pyimedic.dctx.read(StringIO(sample))
+
+        f = StringIO()
+        pyimedic.dctx.write(f, d)
+        for a, b in zip(f.getvalue().split('\n'), sample.split('\n')):
+            self.assertEqual(a, b)
