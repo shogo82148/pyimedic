@@ -6,6 +6,8 @@ See http://www.microsoft.com/downloads/ja-jp/details.aspx?FamilyID=f138dcd4-edb3
 
 import xml.sax
 import xml.sax.handler
+from xml.sax.saxutils import escape
+from xml.sax.saxutils import quoteattr
 
 from model import *
 
@@ -113,7 +115,7 @@ class Handler(xml.sax.handler.ContentHandler):
         self._text += content
 
 
-def parse(f):
+def read(f):
     parser = xml.sax.make_parser()
     handler = Handler()
     parser.setContentHandler(handler)
@@ -122,3 +124,46 @@ def parse(f):
 
     parser.parse(f)
     return handler.dic
+
+def write(f, d):
+    def e(obj):
+        if obj is True:
+            return 'true'
+        elif obj is False:
+            return 'false'
+        elif isinstance(obj, unicode):
+            return escape(obj.encode('utf-8'))
+        return escape(str(obj))
+
+    def surround(tag, string):
+        return '<ns1:{0}>{1}</ns1:{0}>\n'.format(tag, e(string))
+
+    f.write('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n')
+    f.write('<ns1:Dictionary xmlns:ns1="http://www.microsoft.com/ime/dctx"\n')
+    f.write('xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">\n')
+    f.write('\t<ns1:DictionaryHeader>\n')
+    f.write('\t\t' + surround('DictionaryGUID', d.GUID))
+    f.write('\t\t' + surround('DictionaryLanguage', d.Language))
+    f.write('\t\t' + surround('DictionaryVersion', d.Version))
+    f.write('\t\t' + surround('SourceURL', d.SourceURL))
+    f.write('\t\t' + surround('CommentInsertion', d.CommentInsertion))
+
+    for info in d.Info.values():
+        f.write('\t\t<ns1:DictionaryInfo Language={0}>\n'.format(quoteattr(info.Language)))
+        f.write('\t\t\t' + surround("ShortName", info.ShortName))
+        f.write('\t\t\t' + surround("LongName", info.LongName))
+        f.write('\t\t\t' + surround("Description", info.Description))
+        f.write('\t\t\t' + surround("Copyright", info.Copyright))
+        f.write('\t\t\t' + surround("CommentHeader1", info.CommentHeader1))
+        f.write('\t\t\t' + surround("CommentHeader2", info.CommentHeader2))
+        f.write('\t\t\t' + surround("CommentHeader3", info.CommentHeader3))
+        f.write('\t\t</ns1:DictionaryInfo>\n')
+    f.write('\t</ns1:DictionaryHeader>\n')
+
+    for entry in d:
+        f.write('\t<ns1:DictionaryEntry>\n')
+        for name, val in zip(DictionaryEntry._fields, entry):
+            f.write('\t\t' + surround(name, val))
+        f.write('\t</ns1:DictionaryEntry>\n')
+
+    f.write('</ns1:Dictionary>\n')

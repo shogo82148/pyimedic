@@ -31,10 +31,10 @@ def makeDictionaryEntry(*args, **kargs):
         raise TypeError('InputString is nessesary')
     if 'OutputString' not in kargs:
         raise TypeError('OutputString is nessesary')
-    if ('URL' in kargs and
+    if ('URL' in kargs and kargs['URL'] and
         not kargs['URL'].startswith('http://') and
         not kargs['URL'].startswith('https://')):
-        raise ValueError('Invalid URL format')
+        raise ValueError('Invalid URL format' + kargs['URL'])
     if ('Priority' in kargs and
         not 0 <= kargs['Priority'] <= 255):
         raise ValueError('Priority is out of range')
@@ -185,7 +185,7 @@ class DictionaryInfoSet(object):
 class DictionaryInfo(object):
     def __init__(
         self,
-        Language='ja-jp', 
+        Language='ja-jp',
         ShortName = '',
         LongName = '',
         Description = '',

@@ -1,0 +1,53 @@
+!Microsoft IME Dictionary Tool
+!Version: 10
+!Format: WORDLIST
+!Output File Name:
+!DateTime:
+!GUID: {03689Adf-09aF-09Af-09AF-024689AbCdEf}
+!Language: ja-jp
+!Source URL: http://example.com/
+!Short Name (ja-jp): 短い名前
+!Long Name (ja-jp): 長い名前
+!Description (ja-jp): 説明
+!Copyright (ja-jp): Copyrigt (c) shogo
+!Comment Insertion: true
+!Comment Header 1 (ja-jp): ヘッダ1
+!Comment Header 2 (ja-jp): ヘッダ2
+!Comment Header 3 (ja-jp): ヘッダ3
+あ	名詞	名詞	comment,名詞,http://example.com/
+あ	さ変名詞	さ変名詞	comment,さ変名詞,http://example.com/
+あ	ざ変名詞	ざ変名詞	comment,ざ変名詞,http://example.com/
+あ	形動名詞	形動名詞	comment,形動名詞,http://example.com/
+あ	副詞的名詞	副詞的名詞	comment,副詞的名詞,http://example.com/
+あ	さ変形動名詞	さ変形動名詞	comment,さ変形動名詞,http://example.com/
+あ	人名	人名	comment,人名,http://example.com/
+あ	姓	姓	comment,姓,http://example.com/
+あ	名	名	comment,名,http://example.com/
+あ	地名その他	地名その他	comment,地名その他,http://example.com/
+あ	固有名詞	固有名詞	comment,固有名詞,http://example.com/
+あ	あわ行五段	あわ行五段	comment,あわ行五段,http://example.com/
+あ	か行五段	か行五段	comment,か行五段,http://example.com/
+あ	が行五段	が行五段	comment,が行五段,http://example.com/
+あ	さ行五段	さ行五段	comment,さ行五段,http://example.com/
+あ	た行五段	た行五段	comment,た行五段,http://example.com/
+あ	な行五段	な行五段	comment,な行五段,http://example.com/
+あ	ば行五段	ば行五段	comment,ば行五段,http://example.com/
+あ	ま行五段	ま行五段	comment,ま行五段,http://example.com/
+あ	ら行五段	ら行五段	comment,ら行五段,http://example.com/
+あ	一段動詞	一段動詞	comment,一段動詞,http://example.com/
+あ	形容詞	形容詞	comment,形容詞,http://example.com/
+あ	形容動詞	形容動詞	comment,形容動詞,http://example.com/
+あ	副詞	副詞	comment,副詞,http://example.com/
+あ	連帯詞	連帯詞	comment,連帯詞,http://example.com/
+あ	接続詞	接続詞	comment,接続詞,http://example.com/
+あ	感動詞	感動詞	comment,感動詞,http://example.com/
+あ	接頭語	接頭語	comment,接頭語,http://example.com/
+あ	姓名接頭語	姓名接頭語	comment,姓名接頭語,http://example.com/
+あ	地名接頭語	地名接頭語	comment,地名接頭語,http://example.com/
+あ	接尾語	接尾語	comment,接尾語,http://example.com/
+あ	姓名接尾語	姓名接尾語	comment,姓名接尾語,http://example.com/
+あ	助数詞	助数詞	comment,助数詞,http://example.com/
+あ	地名接尾語	地名接尾語	comment,地名接尾語,http://example.com/
+あ	慣用句	慣用句	comment,慣用句,http://example.com/
+あ	短縮よみ	短縮よみ	comment,短縮よみ,http://example.com/
+あ	顔文字	顔文字	comment,顔文字,http://example.com/
