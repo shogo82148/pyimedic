@@ -1,0 +1,85 @@
+#Version: 10
+#GUID: {03689Adf-09aF-09Af-09AF-024689AbCdEf}
+#Language: ja-jp
+#Source URL: http://example.com/
+#Short Name (ja-jp): 短い名前
+#Long Name (ja-jp): 長い名前
+#Description (ja-jp): 説明
+#Copyright (ja-jp): Copyrigt (c) shogo
+#Comment Insertion: true
+#Comment Header 1 (ja-jp): ヘッダ1
+#Comment Header 2 (ja-jp): ヘッダ2
+#Comment Header 3 (ja-jp): ヘッダ3
+あ	Noun	名詞	Noun,a test,http://example.com/Noun
+あ	Noun-Sa	名詞サ変	Noun-Sa,a test
+あ	Noun-Za	名詞サ変	Noun-Za,a test,http://example.com/Noun-Za
+あ	Noun-Adjectival	名詞形動	Noun-Adjectival,a test
+あ	Noun-Adverb	名詞	Noun-Adverb,a test,http://example.com/Noun-Adverb
+あ	Noun-Sa-Adjectival	名詞形動	Noun-Sa-Adjectival,a test
+あ	Name-Personal	人名	Name-Personal,a test,http://example.com/Name-Personal
+あ	Name-Family	姓	Name-Family,a test
+あ	Name-Given	名	Name-Given,a test,http://example.com/Name-Given
+あ	Place	地名	Place,a test
+あ	Place-Prefecture	地名	Place-Prefecture,a test,http://example.com/Place-Prefecture
+あ	Place-Country	地名	Place-Country,a test
+あ	Place-Ward	地名	Place-Ward,a test,http://example.com/Place-Ward
+あ	Place-City	地名	Place-City,a test
+あ	Place-Town	地名	Place-Town,a test,http://example.com/Place-Town
+あ	Place-Town-Machi	地名	Place-Town-Machi,a test
+あ	Place-Town-Cho	地名	Place-Town-Cho,a test,http://example.com/Place-Town-Cho
+あ	Place-Village	地名	Place-Village,a test
+あ	Place-Village-Mura	地名	Place-Village-Mura,a test,http://example.com/Place-Village-Mura
+あ	Place-Village-Son	地名	Place-Village-Son,a test
+あ	Place-Station	地名	Place-Station,a test,http://example.com/Place-Station
+あ	Noun-Proper	固有名詞	Noun-Proper,a test
+あ	Name-Company	組織	Name-Company,a test,http://example.com/Name-Company
+あ	Name-Organization	組織	Name-Organization,a test
+あ	Name-Construction	組織	Name-Construction,a test,http://example.com/Name-Construction
+あ	Pronoun	名詞	Pronoun,a test
+あ	Number	数	Number,a test,http://example.com/Number
+あ	Verb-5-AW	動詞ワ行五段	Verb-5-AW,a test
+あ	Verb-5-K	動詞カ行五段	Verb-5-K,a test,http://example.com/Verb-5-K
+あ	Verb-5-G	動詞ガ行五段	Verb-5-G,a test
+あ	Verb-5-S	動詞サ行五段	Verb-5-S,a test,http://example.com/Verb-5-S
+あ	Verb-5-T	動詞タ行五段	Verb-5-T,a test
+あ	Verb-5-N	動詞ナ行五段	Verb-5-N,a test,http://example.com/Verb-5-N
+あ	Verb-5-B	動詞バ行五段	Verb-5-B,a test
+あ	Verb-5-M	動詞マ行五段	Verb-5-M,a test,http://example.com/Verb-5-M
+あ	Verb-5-R	動詞ラ行五段	Verb-5-R,a test
+あ	Verb-EuphonyU-AW	動詞ワ行五段	Verb-EuphonyU-AW,a test,http://example.com/Verb-EuphonyU-AW
+あ	Verb-Euphony-K	動詞カ行五段	Verb-Euphony-K,a test
+あ	Verb-Irregular-R	動詞ラ行五段	Verb-Irregular-R,a test,http://example.com/Verb-Irregular-R
+あ	Verb-1	動詞一段	Verb-1,a test
+あ	Adjective	形容詞	Adjective,a test,http://example.com/Adjective
+あ	Adjective-Garu	形容詞	Adjective-Garu,a test
+あ	Adjective-Me	形容詞	Adjective-Me,a test,http://example.com/Adjective-Me
+あ	Adjective-Syu	形容詞	Adjective-Syu,a test
+あ	AdjectivalNoun	名詞形動	AdjectivalNoun,a test,http://example.com/AdjectivalNoun
+あ	AdjectivalNoun-No	名詞形動	AdjectivalNoun-No,a test
+あ	AdjectivalNoun-Taru	名詞形動	AdjectivalNoun-Taru,a test,http://example.com/AdjectivalNoun-Taru
+あ	Adverb	副詞	Adverb,a test
+あ	Adverb-Suru	副詞	Adverb-Suru,a test,http://example.com/Adverb-Suru
+あ	Adverb-Ni	副詞	Adverb-Ni,a test
+あ	Adverb-Na	副詞	Adverb-Na,a test,http://example.com/Adverb-Na
+あ	Adverb-Da	副詞	Adverb-Da,a test
+あ	Adverb-To	副詞	Adverb-To,a test,http://example.com/Adverb-To
+あ	Adverb-Tosuru	副詞	Adverb-Tosuru,a test
+あ	Adnominal	連帯詞	Adnominal,a test,http://example.com/Adnominal
+あ	Conjuction	接続詞	Conjuction,a test
+あ	Interjection	感動詞	Interjection,a test,http://example.com/Interjection
+あ	Prefix	接頭語	Prefix,a test
+あ	Suffix	接尾一般	Suffix,a test,http://example.com/Suffix
+あ	Suffix-PersonalName	接尾人名	Suffix-PersonalName,a test
+あ	Suffix-Number	助数詞	Suffix-Number,a test,http://example.com/Suffix-Number
+あ	Prefix-Number	助数詞	Prefix-Number,a test
+あ	Suffix-Prefecture	接尾地名	Suffix-Prefecture,a test,http://example.com/Suffix-Prefecture
+あ	Suffix-Country	接尾地名	Suffix-Country,a test
+あ	Suffix-Ward	接尾地名	Suffix-Ward,a test,http://example.com/Suffix-Ward
+あ	Suffix-City	接尾地名	Suffix-City,a test
+あ	Suffix-Town1	接尾地名	Suffix-Town1,a test,http://example.com/Suffix-Town1
+あ	Suffix-Town2	接尾地名	Suffix-Town2,a test
+あ	Character	名詞	Character,a test,http://example.com/Character
+あ	Symbol	記号	Symbol,a test
+あ	Idiom	独立語	Idiom,a test,http://example.com/Idiom
+あ	ShortCut	短縮よみ	ShortCut,a test
+あ	Emotion	顔文字	Emotion,a test,http://example.com/Emotion
